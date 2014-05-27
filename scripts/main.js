@@ -15335,6 +15335,7 @@ module.exports = [
       $log.debug("Loading page " + page + "...");
       $rootScope.state = 'loading';
       return ContentService.getPage(page).then(function(posts) {
+        $rootScope.title = $rootScope.blog.title;
         $log.debug('Got posts', posts);
         $scope.pages[page - 1] = posts;
         return $rootScope.state = 'ready';
@@ -15358,6 +15359,7 @@ module.exports = [
     $log.debug('$routeParams', $scope.post);
     ContentService.getPost($routeParams.id, $routeParams.page).then(function(post) {
       $scope.post = post;
+      $rootScope.title = "" + $rootScope.blog.title + " - " + post.title;
       $rootScope.state = 'ready';
       return $log.debug('Post loaded', post);
     })["catch"](function(err) {
