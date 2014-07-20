@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>مدونة فواز</title>
     <link>https://forabi.github.io</link>
-    <updated>2014-07-01T08:43:34Z</updated>
+    <updated>2014-07-20T18:48:18Z</updated>
     <author>
         <name>محمد فواز عرابي</name>
         <email>mfawwz93@gmail.com</email>
@@ -11,6 +11,14 @@
     <subtitle>تطوير ويب، علوم حاسب، مواضيع خاصة بالمهاوييس وبعض الأشياء الشخصية</subtitle>
     <logo>avatar.jpg</logo>
     <generator>Feed for Node.js</generator>
+    <entry>
+        <title type="html"><![CDATA[5 أسباب دفعتني لترك فيس بوك]]></title>
+        <id>https://forabi.github.io/#!/closing-facebook</id>
+        <link href="https://forabi.github.io/#!/closing-facebook">
+        </link>
+        <updated>2014-07-20T00:00:00Z</updated>
+        <summary type="html"><![CDATA[ملاحظة: أنا هنا أتحدث عن حذف الحساب وليس تعطيله مؤقّتًا (deactivating).]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ما الجديد في الإصدار القادم من JavaScript (الجزء الأول)]]></title>
         <id>https://forabi.github.io/#!/whats-new-in-es6</id>
