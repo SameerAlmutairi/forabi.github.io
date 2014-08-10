@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>مدونة فواز</title>
     <link>https://forabi.github.io</link>
-    <updated>2014-07-26T00:55:18Z</updated>
+    <updated>2014-08-10T01:18:03Z</updated>
     <author>
         <name>محمد فواز عرابي</name>
         <email>mfawwz93@gmail.com</email>
@@ -11,6 +11,14 @@
     <subtitle>تطوير ويب، علوم حاسب، مواضيع خاصة بالمهاوييس وبعض الأشياء الشخصية</subtitle>
     <logo>avatar.jpg</logo>
     <generator>Feed for Node.js</generator>
+    <entry>
+        <title type="html"><![CDATA[JavaScript تستطيع أن تُنظّف أطباقك!]]></title>
+        <id>https://forabi.github.io/#!/javascript-all-the-things</id>
+        <link href="https://forabi.github.io/#!/javascript-all-the-things">
+        </link>
+        <updated>2014-08-10T00:00:00Z</updated>
+        <summary type="html"><![CDATA[كما هو الحال كل بضع عقود، تطفو إلى السطح لغة برمجة ما ويعدنا متعصبوها بأنها ستفعل لنا كل شيء، بدءًا من تطبيقات الحاسوب مرورًا بالهواتف الذكية وليس انتهاءً بالتعامل مع الجمادات من حولنا بطرق رائعة كالتحكم بطائرة بلا طيّار باستخدام قبضة Xbox 360! لم يكن هذا الحماس يومًا أشدّ منه مع JavaScript، والأمر يعود لعدّة أسباب:]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[5 أسباب دفعتني لترك فيس بوك]]></title>
         <id>https://forabi.github.io/#!/closing-facebook</id>
