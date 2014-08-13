@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>مدونة فواز</title>
     <link>https://forabi.github.io</link>
-    <updated>2014-08-13T17:23:52Z</updated>
+    <updated>2014-08-13T17:42:21Z</updated>
     <author>
         <name>محمد فواز عرابي</name>
         <email>mfawwz93@gmail.com</email>
@@ -402,10 +402,12 @@ myApp.controller(<span class="hljs-string">&apos;MainCtrl&apos;</span>, [<span c
   $scope.text = <span class="hljs-string">&apos;&#x645;&#x631;&#x62D;&#x628;&#x627;&#x64B; &#x628;&#x645;&#x639;&#x62C;&#x628;&#x64A; Angular!&apos;</span>;
 
 }]);</pre><p>والناتج النهائي:</p>
-<p><a href="http://jsfiddle.net/toddmotto/mN7QB/light/">رابط المثال</a></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/toddmotto/mN7QB/embedded/result,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 <p>أهم مفهوم هنا مفهوم النطاق (<code dir='ltr'>$scope</code>) والذي ستربطه بكل الوظائف ضمن متُحكّم مُعيّن. يُشير <code dir='ltr'>$scope</code> إلى العنصر أو المنطقة الحالية في DOM (فهو لا يساوي <code dir='ltr'>this</code> ضمن النص البرمجي) وبهذا يخلق نطاقاً يحيط بكل البيانات والوظائف ضمن العناصر (DOM elements)، ويعزلها عن العناصر الأخرى، فيبدو وكأنه ينقل مجالات JavaScript العامة/الخاصة إلى DOM، وهذا شيء رائع!
 قد يبدو مفهوم النطاق مخيفاً للوهلة الأولى، لكنه طريقك الواصل بين الخادم (أو حتى البيانات المحلية) من جهة وDOM من الجهة الأخرى. يعطيك هذا المثال فكرة عن الطريقة التي &quot;تُدفع&quot; بها البيانات إلى DOM.</p>
-<p><a href="http://jsfiddle.net/toddmotto/425KU/light/">رابط المثال</a></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/toddmotto/425KU/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 <p>لنٌلقِ نظرة على بيانات حقيقية نفترض أننا جلبناها من خادم لنعرض تفاصيل تسجيل دخول المستخدم، سنكتفي في هذه المرحلة باستخدام بيانات جاهزة، وسنتعلم كيفية جلبها من الخادم على هيئة JSON لاحقاً.
 أولاً سنكتب نص JavaScript:</p>
 <pre lang='en'><span class="hljs-keyword">var</span> myApp = angular.module(<span class="hljs-string">&apos;myApp&apos;</span>, []);
@@ -426,7 +428,8 @@ myApp.controller(<span class="hljs-string">&apos;UserCtrl&apos;</span>, [<span c
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;id&quot;</span>&gt;</span>User ID: {{ user.details.id }}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre><p>الناتج:</p>
-<p><a href="http://jsfiddle.net/toddmotto/425KU/light/">رابط المثال</a></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/toddmotto/425KU/embedded/result,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 <p>من المهمّ أن تتذكر أن المتحكمات تستخدم فقط <em>للبيانات</em> ولإنشاء وظائف تتواصل مع الخادم وتجلب أو ترسل بيانات JSON. لا تستخدم المتحكمات لمعالجة DOM (كأن تنقل عنصراً ضمن الصفحة أو تخفيه أو تظهره...)، فمعالجة DOM مهمة المُرشِدات (directives)، وهي ما سنشرحه لاحقاً، المهم أن تتذكر أن موضع jQuery وغيرها من المكتبات التي تتعامل مع DOM ليس ضمن المتحكّمات.</p>
 <p>نصيحة من محترف: خلال اطلاعك على وثائق Angular الرسمية، ستلاحظ أن الأمثلة المقدمة تعتمد الأسلوب التالي لإنشاء المتحكمات:</p>
 <pre lang='en'><span class="hljs-keyword">var</span> myApp = angular.module(<span class="hljs-string">&apos;myApp&apos;</span>, []);
@@ -471,7 +474,9 @@ myApp.controller(<span class="hljs-string">&apos;UserCtrl&apos;</span>, [<span c
     }
   };
 });</pre><p>الناتج:</p>
-<p><a href="http://jsfiddle.net/toddmotto/VC4H2/light/">رابط المثال</a></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/toddmotto/VC4H2/embedded/result,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
 <p>تأكد من فحص العنصر (من الأمر Inspect element في المتصفح) لرؤية العناصر الجديدة التي أُدخلت في الصفحة. أعلم أن الرمز لم يظهر ضمن العنصر الجديد، ببساطة لأنني لم أُضمّن Font Awesome ضمن المشروع، ولكن يمكنك فهم كيف تعمل المرشدات. لنتعرف الآن ما تعنيه كل واحدة من خصائص المرشد السابقة الذكر:</p>
 <ul>
 <li>الخاصة <em><code dir='ltr'>restrict</code></em>: تُقيّد هذه الخاصة كيفية استخدام المُرشد، كيف نريد أن نستخدمه؟ إن كنت تبني مشروعاً يتطلب دعم النسخ القديمة من IE، فعليك استخدامه كخاصّة (attribute) أو صنف (class). القيمة <code dir='ltr'>&#39;A&#39;</code> تعني حصر استخدام المرشد بالخواص (attributes) فقط. <code dir='ltr'>&#39;E&#39;</code> تعني Element و<code dir='ltr'>&#39;C&#39;</code> صنف و<code dir='ltr'>&#39;M&#39;</code> تعليق. القيمة الافتراضية هي <code dir='ltr'>&#39;EA&#39;</code> (أي عنصر وخاصة).</li>
@@ -563,7 +568,9 @@ myApp.controller(<span class="hljs-string">&apos;MainCtrl&apos;</span>, [<span c
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Reverse: {{ greeting | reverse }}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre><p>الناتج:</p>
-<p><a href="http://jsfiddle.net/toddmotto/pmh4s/light/">رابط المثال</a></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/toddmotto/pmh4s/embedded/result,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
 <p>وهنا نستخدم المُرشح ضمن حلقة <code dir='ltr'>ng-repeat</code>:</p>
 <pre lang='en'><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">ng-repeat</span>=<span class="hljs-value">&quot;number in myNumbers |filter:oddNumbers&quot;</span>&gt;</span>{{ number }}<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
@@ -583,7 +590,8 @@ myApp.controller(<span class="hljs-string">&apos;MainCtrl&apos;</span>, [<span c
 <pre lang='en'><span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">ng-repeat</span>=<span class="hljs-value">&quot;number in numbers | filter:greaterThanNum&quot;</span>&gt;</span>
   {{ number }}
 <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span></pre><p>الناتج:</p>
-<p><a href="http://jsfiddle.net/toddmotto/cZbCf/light/">رابط المثال</a></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/toddmotto/cZbCf/embedded/result,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 <p>كان هذا القسم الأكبر مما تحتاج لمعرفته عن AngularJS وواجهاتها البرمجية، ومع أن ما تعلمناه كافٍ لبناء تطبيق Angular، ولكننا إلى الآن لم نسكتشف أغوراها!</p>
 <h3 id="-">ربط البيانات ثنائي الاتجاه</h3>
 <p>عندما سمعت للمرة الأولى عن <strong>ربط البيانات ثنائي الاتجاه</strong> لم أفهم ما يعنيه. باختصار يمكن القول إنه حلقة متصلة من البيانات المُزامنة: حدّث النموذج (Model) لتُحدَّث طريقة العرض (View)، أو حدّث طريقة العرض ليُحدَّث النموذج (Model). هذا يعني أن البيانات تبقى محدثة دوماً دون عناء. إن ربطت نموذج <code dir='ltr'>ng-model</code> مع حقل إدخال <code dir='ltr'>&lt;input&gt;</code> وكتبت فيه، فهذا يُنشئ (أو يُحدِّث) نموذجاً في الوقت ذاته.
@@ -598,7 +606,8 @@ myApp.controller(<span class="hljs-string">&apos;MainCtrl&apos;</span>, [<span c
     <span class="hljs-comment" dir="ltr">// and/or initialise it with an existing string</span>
     $scope.myModel = <span class="hljs-string">&apos;&apos;</span>;
 }]);</pre><p>الناتج:</p>
-<p><a href="http://jsfiddle.net/toddmotto/qrr3q/light/">link_to_demo</a></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/toddmotto/qrr3q/embedded/result,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 <h3 id="-xhr-ajax-http-json-">طلبات <code dir='ltr'>XHR</code>/Ajax/<code dir='ltr'>$http</code> وربط <code dir='ltr'>JSON</code></h3>
 <p>نعرف الآن كيف نرسل بيانات بسيطة ضمن المجال (<code dir='ltr'>$scope</code>)، ونعرف ما يكفي عن كيفية عمل النماذج وربط البيانات ثنائي الجانب، والآن حان الوقت لمحاكاة طلبات <code dir='ltr'>XHR</code> حقيقية للخادم. ليس هذا ضرورياً لمواقع الويب العادية، لكنه مناسب جداً لجلب البيانات في تطبيقات الويب.
 عندما تطور تطبيقك على جهازك المحلي، فغالباً ما تستخدم شيئاً مثل Java أو ASP.NET أو PHP أو غيرها لتشغيل خادم محلي. وسواء كنا نتصل بقاعدة بيانات محلية أم بخادم بعيد كواجهة برمجية، فإننا نتبع نفس الخطوات بالضبط.</p>
@@ -691,7 +700,8 @@ myApp.controller(<span class="hljs-string">&apos;MainCtrl&apos;</span>, [<span c
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{{ message.sent | date:&apos;MMM d, y h:mm:ss a&apos; }}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre><p>الناتج:</p>
-<p><a href="http://jsfiddle.net/toddmotto/TAVQc/light/">رابط المثال</a></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/toddmotto/TAVQc/embedded/result,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 <p>قمت أيضاً باستخدام مُرشّح التاريخ لأبين لك كيف يمكن أن تعرض تواريخ UTC.</p>
 <p>اطلع على المُرشدات التي توفرها Angular لتتعرف على القدرات الكاملة للربط التصريحي. بهذا نكون قد عرفنا كيف نصل البيانات بين الخادم وطريقة العرض.</p>
 <h3 id="-scope-functions-">وظائف المجال (Scope functions)</h3>
@@ -707,7 +717,9 @@ myApp.controller(<span class="hljs-string">&apos;MainCtrl&apos;</span>, [<span c
 <pre lang='en'>&lt;a ng-click=<span class="hljs-string">&quot;deleteEmail($index)&quot;</span>&gt;Delete email&lt;<span class="hljs-regexp">/a&gt;</span></pre><p>هذا يختلف تمامًا عن مستقبلات النقر التقليدية في JavaScript، لأسباب عديدة نشرحها لاحقاً.
 لاحظ أنني أيضًا أمرر فهرس العنصر <code dir='ltr'>$index</code>، إذ يعرف Angualr ما العنصر المُراد حذفه (كم يوفر هذا من العناء!؟)</p>
 <p>الناتج (احذف بعض الرسائل):</p>
-<p><a href="http://jsfiddle.net/toddmotto/BgZmt/light/">رابط المثال</a></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/toddmotto/BgZmt/embedded/result,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
 <h3 id="-dom-">طرائق DOM التصريحية</h3>
 <p>ننتقل الآن لطرائق DOM، وهي أيضًا مُرشدات تؤدي وظيفة ضمن الصفحة بدونها كنا سنكتب الكثير من النص البرمجي. إحدى الأمثلة المناسبة لإيضاح الفكرة هنا هي إظهار أو إخفاء قسم التنقل ضمن الصفحة باستخدام <code dir='ltr'>ng-show</code> و<code dir='ltr'>ng-click</code>، لنرَ بساطة هذا:</p>
 <pre lang='en'><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">ng-click</span>=<span class="hljs-value">&quot;toggle = !toggle&quot;</span>&gt;</span>Toggle nav<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -717,7 +729,8 @@ myApp.controller(<span class="hljs-string">&apos;MainCtrl&apos;</span>, [<span c
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Link 3<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre><p>هنا ندخل عالم MVVM (اختصار Model-View-View-Model)، لاحظ أننا لم نستخدم متحكماً، وسنشرح فكرة MVVM بعد قليل.</p>
 <p>الناتج (جرب الإظهار والإخفاء):</p>
-<p><a href="http://jsfiddle.net/toddmotto/ZUyW5/light/">رابط المثال</a></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/toddmotto/ZUyW5/embedded/result,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 <h3 id="-expressions-">التعبيرات (Expressions)</h3>
 <p>من أفضل ما يقدمه Angular، يقدم بديلاً عن الحاجة لكتابة الكثير من JavaScript والنصوص المكررة.</p>
 <p>هل قمت يوماً بكتابة شيء كهذا؟</p>
@@ -730,7 +743,8 @@ myApp.controller(<span class="hljs-string">&apos;MainCtrl&apos;</span>, [<span c
 };</pre><p>ربما يكون هذا استدعاءً راجعًا عن طلب GET، ونحتاج لنغير محتوى في الصفحة بناء على البيانات، يقدم Angular هذا بدون الحاجة لكتابة حرف JavaScript!</p>
 <pre lang='en'><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{{ data.length &gt; 0 &amp;&amp; &apos;My data&apos; || &apos;No data&apos; }}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></pre><p>سيقوم هذا بتحديث الصفحة تلقائياً دون استدعاءات عند وصول البيانات أو ما شابه. إن لم تتوفر البيانات، سيظهر هذا واضحاً، وإن وجدت فسيظهر كذلك. هناك حالات كثيرة جدًا يممكن فيها لـAngular أن يتولاها عبر ربطه ثنائي الجانب للبيانات الذي يعمل كالسحر!</p>
 <p>الناتج:</p>
-<p><a href="http://jsfiddle.net/toddmotto/XCwcr/light/">رابط المثال</a></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/toddmotto/XCwcr/embedded/result,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 <h3 id="-routing-">طرق العرض الديناميكية والتوجيه (Routing)</h3>
 <p>هي ما تقوم عليه فلسفة تطبيقات الويب (والمواقع) أحادية الصفحة: لديك قسم الترويسة وقسم التذييل وشريط جانبي ثم المحتوى الذي يُحدث تلقائياً بناءً على الرابط الحالي.</p>
 <p>يجعل Angular إعداد هذا في منتهى السهولة. تحقن طرق العرض الديناميكة طرقاً معينة بناء على الرابط، عبر استخدام <code dir='ltr'>$routeProvider</code>. فيما يلي إعداد بسيط:</p>
@@ -818,7 +832,8 @@ globalData.emails = <span class="xml"><span class="hljs-tag">&lt;<span class="hl
   {{ number }}
 <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span></pre><p>يبدو هذا مناسباً للتجارب السريعة، ولكنني أنصح دوماً باستخدام متحكم للحفاظ على تنظيم النص البرمجي.</p>
 <p>الناتج:</p>
-<p><a href="http://jsfiddle.net/toddmotto/C9GHF/light/">رابط المثال</a></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/toddmotto/C9GHF/embedded/result,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 <h3 id="-html5">مكونات الويب في HTML5</h3>
 <p>قد تبدو هذه الفكرة مكررة، ولكنني سأعيدها هنا لنتحدث عن مكونات الويب.
 يسمح Angular بإنشاء عناصر (elements) مخصصة مثل: <code dir='ltr'>&lt;myCustomElement&gt;&lt;/myCustomElement&gt;</code></p>
